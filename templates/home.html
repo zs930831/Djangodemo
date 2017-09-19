@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <style>
+        label {
+            width: 80px;
+            text-align: right;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body style="margin:0">
+<div style="height: 48px;background-color: aqua">
+</div>
+<div>
+    <form action="/home" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="username">用户名：</label>
+                    <input id="username" name="user" type="text" placeholder="用户名"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender">性别：</label>
+                    <input id="gender" name="gd" type="text" placeholder="性别"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="age">用户名：</label>
+                    <input id="age" name="age" type="text" placeholder="年龄"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="提交"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<div>
+    <table>
+        {% for row in user_list %}
+            <tr>
+                <!--in后面的是key不是value
+                -->
+                <td>{{ row.username }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.age }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
